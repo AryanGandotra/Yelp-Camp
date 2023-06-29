@@ -22,4 +22,10 @@
 Start the application:
 
 - npm start
-- Open your web browser and visit http://localhost:3000 to see the running application.
+- Open your web browser and visit http://localhost:3000/campgrounds to see the running application.
+
+## Demo
+
+![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo1.png)
+
+![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo2.png)
