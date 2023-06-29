@@ -5,12 +5,14 @@ const path = require("path");
 const methodOverride = require("method-override");
 const Campground = require("./models/campGround");
 const morgan = require("morgan");
+const ejsMate = require("ejs-mate");
 
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(morgan("tiny"));
+app.engine("ejs", ejsMate);
 
 mongoose.connect("mongodb://127.0.0.1:27017/yelp-camp", {
   useNewUrlParser: true,
