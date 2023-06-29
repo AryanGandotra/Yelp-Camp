@@ -1,8 +1,8 @@
 # Yelp-Camp
 
 ## Requirements
-- Node.js (version X.X.X)
-- npm (version X.X.X)
+- Node.js
+- npm
 
 ## Installation
 1. Clone the repository:
