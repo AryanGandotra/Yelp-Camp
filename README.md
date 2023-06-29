@@ -22,5 +22,4 @@
 Start the application:
 
 - npm start
-
-## Open your web browser and visit http://localhost:3000 to see the running application.
+- Open your web browser and visit http://localhost:3000 to see the running application.
