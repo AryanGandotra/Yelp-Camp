@@ -1,0 +1,30 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campgrounds</title>
+</head>
+
+<body>
+
+    <a href="/campgrounds/new">Add New Campground</a>
+
+    <%for(let element of campgrounds){%>
+        <div>
+            <ul>
+                <li>
+                    <%= element.title %>
+                        <%= element.location %>
+                            <a href="/campgrounds/<%= element._id %>">View Campground</a>
+
+                </li>
+
+
+            </ul>
+        </div>
+        <%} %>
+
+</body>
+
+</html>
