@@ -1,5 +1,7 @@
 # Yelp-Camp
 
+YelpCamp is an impressive camping site website project made using Node.js, Express, and EJS. This project offers a user-friendly platform where outdoor enthusiasts can explore a wide range of camping spots, read reviews, and make reservations. With its seamless integration of backend technologies and dynamic EJS templates, YelpCamp provides a delightful and interactive camping experience for nature lovers.
+
 ## Requirements
 - Node.js
 - npm
