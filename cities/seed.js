@@ -3,8 +3,12 @@ const Campground = require("../models/campGround");
 const cities = require("./cities");
 const { places, descriptors } = require("./seedHelpers");
 const axios = require("axios");
+require("dotenv").config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/yelp-camp", {
+const connectionString = process.env.DB_CONNECTION_STRING;
+const unsplashKey = process.env.UNSPLASH_KEY;
+
+mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -22,7 +26,7 @@ async function seedImg() {
   try {
     const resp = await axios.get("https://api.unsplash.com/photos/random", {
       params: {
-        client_id: "S7Gafwnz5oKkO1CCwtDBIts_1dtvXx5-aGzCd6HBWWk",
+        client_id: unsplashKey,
         collections: 1114848,
       },
     });
