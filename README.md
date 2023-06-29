@@ -26,6 +26,14 @@ Start the application:
 
 ## Demo
 
+Home Page
+
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo1.png)
 
+Campground Page
+
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo2.png)
+
+Update Page
+
+![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo3.png)
