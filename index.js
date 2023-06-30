@@ -6,8 +6,10 @@ const methodOverride = require("method-override");
 const Campground = require("./models/campGround");
 const morgan = require("morgan");
 const ejsMate = require("ejs-mate");
+const favicon = require("serve-favicon");
 require("dotenv").config();
 
+app.use(express.static(path.join(__dirname, "public")));
 app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -26,6 +28,8 @@ db.on("error", console.error.bind(console, "Connection error:"));
 db.once("open", () => {
   console.log("Database connected");
 });
+
+app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 app.get("/", (req, res) => {
   res.render("home");
@@ -78,5 +82,5 @@ app.use((req, res) => {
 
 app.listen(3000, () => {
   console.log("Listening on Port 3000");
-  console.log("http://localhost:3000");
+  console.log("http://localhost:3000/campgrounds");
 });
