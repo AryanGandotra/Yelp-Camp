@@ -20,7 +20,7 @@ router.post(
       }
       const user = new User({ email, username });
       const registeredUser = await User.register(user, password);
-      console.log(registeredUser);
+      // console.log(registeredUser);
 
       req.login(registeredUser, (err) => {
         if (err) {
