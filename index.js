@@ -8,19 +8,14 @@ const ejsMate = require("ejs-mate");
 const favicon = require("serve-favicon");
 require("dotenv").config();
 const ExpressError = require("./utils/ExpressError");
-const campgrounds = require("./routes/campgrounds");
-const reviews = require("./routes/reviews");
+const campgroundsRoutes = require("./routes/campgrounds");
+const reviewsRoutes = require("./routes/reviews");
 const session = require("express-session");
 const flash = require("connect-flash");
-
-app.use(express.static(path.join(__dirname, "public")));
-app.set("views", path.join(__dirname, "/views"));
-app.set("view engine", "ejs");
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
-app.use(morgan("tiny"));
-app.engine("ejs", ejsMate);
-app.use(flash());
+const passport = require("passport");
+const LocalStrategy = require("passport-local");
+const User = require("./models/user");
+const userRoutes = require("./routes/user");
 
 const sessionConfig = {
   secret: "thisshouldbeabettersecret!",
@@ -33,7 +28,20 @@ const sessionConfig = {
   },
 };
 
+app.use(express.static(path.join(__dirname, "public")));
+app.set("views", path.join(__dirname, "/views"));
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
+app.use(morgan("tiny"));
+app.engine("ejs", ejsMate);
 app.use(session(sessionConfig));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser()); // how to store user in session
+passport.deserializeUser(User.deserializeUser()); // how to get user out of session
 
 const connectionString = process.env.DB_CONNECTION_STRING;
 mongoose.connect(connectionString, {
@@ -50,6 +58,7 @@ db.once("open", () => {
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
 app.use((req, res, next) => {
+  res.locals.currentUser = req.user; // req.user is defined by passport
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
 
@@ -60,9 +69,17 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.use("/campgrounds", campgrounds);
+app.get("/fakeUser", async (req, res) => {
+  const user = new User({ email: "aryan@gmail.com", username: "aryan_10.03" });
+  const newUser = await User.register(user, "aryan@123");
+  res.send(newUser);
+});
 
-app.use("/campgrounds/:id/reviews", reviews);
+app.use("/campgrounds", campgroundsRoutes);
+
+app.use("/campgrounds/:id/reviews", reviewsRoutes);
+
+app.use("/", userRoutes);
 
 app.all("*", (req, res, next) => {
   next(new ExpressError("Page Not Found", 404));
