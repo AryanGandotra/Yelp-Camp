@@ -11,19 +11,32 @@ const {
   updateCampground,
   deleteCampground,
 } = require("../controllers/campgrounds");
-const { route } = require("./campgrounds.js");
+const multer = require("multer");
+const { storage } = require("../cloudinary");
+const upload = multer({ storage });
 
 router
   .route("/")
   .get(catchAsync(index))
-  .post(isLogged, validateCampground, catchAsync(createCampground));
+  .post(
+    isLogged,
+    upload.array("image"),
+    validateCampground,
+    catchAsync(createCampground)
+  );
 
 router.route("/new").get(isLogged, renderNewForm);
 
 router
   .route("/:id")
   .get(catchAsync(showCampground))
-  .put(isLogged, isAuthor, validateCampground, catchAsync(updateCampground))
+  .put(
+    isLogged,
+    isAuthor,
+    upload.array("image"),
+    validateCampground,
+    catchAsync(updateCampground)
+  )
   .delete(isLogged, isAuthor, catchAsync(deleteCampground));
 
 router.route("/:id/edit").get(isLogged, isAuthor, catchAsync(renderEditForm));
