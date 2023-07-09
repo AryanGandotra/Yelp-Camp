@@ -61,7 +61,6 @@ app.use((req, res, next) => {
   res.locals.currentUser = req.user; // req.user is defined by passport
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
-
   next();
 });
 
