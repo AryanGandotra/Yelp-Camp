@@ -4,7 +4,7 @@ const Campground = require("./models/campGround");
 const Review = require("./models/reviews");
 
 module.exports.isLogged = (req, res, next) => {
-  console.log(req.user);
+  // console.log(req.user);
   if (!req.isAuthenticated()) {
     req.session.returnTo = req.originalUrl;
     req.flash("error", "You must be signed in first!");
