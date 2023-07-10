@@ -93,5 +93,5 @@ app.use((err, req, res, next) => {
 
 app.listen(3000, () => {
   console.log("Listening on Port 3000");
-  console.log("http://localhost:3000/campgrounds");
+  console.log("http://localhost:3000");
 });
