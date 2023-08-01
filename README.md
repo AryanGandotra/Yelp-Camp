@@ -28,30 +28,30 @@ Start the application:
 
 ## Demo
 
-Home Page
+Landing Page
 
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo1.png)
 
-Campground Page
+Campground Listing Page
 
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo2.png)
 
-Update Page
+SignUp Page
 
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo3.png)
 
-Home Page
+Login Page
 
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo4.png)
 
-Campground Page
+Campground Information Page
 
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo5.png)
 
-Update Page
+Campground Edit Page
 
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo6.png)
 
-Update Page
+New Campground Page
 
 ![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo7.png)
