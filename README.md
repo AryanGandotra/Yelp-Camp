@@ -26,7 +26,7 @@ Start the application:
 - npm start
 - Open your web browser and visit http://localhost:3000/campgrounds to see the running application.
 
-## Demo
+## Demo Images
 
 Landing Page
 
