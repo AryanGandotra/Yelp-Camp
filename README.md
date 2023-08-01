@@ -42,16 +42,16 @@ Update Page
 
 Home Page
 
-![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo4.png)
+![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo4.png)
 
 Campground Page
 
-![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo5.png)
+![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo5.png)
 
 Update Page
 
-![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo6.png)
+![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo6.png)
 
 Update Page
 
-![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/demo7.png)
+![](https://github.com/AryanGandotra/Yelp-Camp/blob/main/images/Demo7.png)
